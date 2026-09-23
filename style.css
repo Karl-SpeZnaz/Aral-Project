@@ -1,0 +1,321 @@
+* {
+  box-sizing: border-box;
+}
+button {
+  background: linear-gradient(359deg, #dff7e7 0%, #defff3 80%);
+}
+body {
+  margin: 2%;
+  padding: 0;
+  font: 1em sans-serif;
+}
+
+header {
+  display: flex;
+  position: relative;
+
+  z-index: 100;
+}
+.banner {
+  display: flex;
+  position: relative;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+
+  width: 100%;
+  border: 2px solid black;
+  border-radius: 10px;
+  background: linear-gradient(164deg, #30d95f 0%, #0b8a5e 80%);
+}
+.log-title-head {
+  display: flex;
+  flex-direction: row;
+}
+.title-top {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-left: 2%;
+}
+.navbar {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.menu {
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  cursor: pointer;
+
+  margin: 0;
+  padding: 0;
+}
+.item-menu {
+  position: relative;
+}
+.item-menu:hover .submenu {
+  display: inline-flex;
+  visibility: visible;
+}
+.submenu {
+  display: flex;
+  gap: 10px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: 10px;
+  transform: translate(-50%, 10%);
+  flex-direction: row;
+
+  padding: 10px;
+
+  border: 2px solid black;
+  border-radius: 10px;
+  background: linear-gradient(164deg, #30d95f 0%, #0b8a5e 80%);
+
+  visibility: hidden;
+
+  z-index: 10;
+}
+.submenu::before {
+  content: "";
+  position: absolute;
+  top: -30px;
+  width: 100%;
+  height: 30px;
+  background-color: transparent;
+}
+.submenu li {
+  list-style: none;
+  font-size: 1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: black;
+}
+.submenu a {
+  text-decoration: none;
+  text-transform: none;
+
+  border: 2px solid transparent;
+  color: black;
+}
+.submenu a:hover {
+  border: 2px solid white;
+  color: white;
+}
+.subsubmenu {
+  position: relative;
+  padding: 0;
+}
+.subsubmenu li {
+  padding: 20px 0;
+}
+.btn-top {
+  font-weight: bold;
+  border-radius: 2cap;
+  margin-right: 2%;
+}
+
+.under-head {
+  display: flex;
+  position: relative;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10%;
+  margin-left: 5%;
+}
+.under-head-title {
+  font: 2.2em tahoma;
+  font-weight: bolder;
+  background: linear-gradient(164deg, #30d95f 0%, #0b8a5e 80%);
+  background-clip: text;
+  color: transparent;
+
+  margin: 0;
+  padding: 0;
+}
+.under-head-p {
+  font: 1.1em sans-serif;
+  line-height: 1.3;
+  margin-top: 5px;
+  padding: 0;
+}
+.btn-under-head {
+  position: absolute;
+  top: 100%;
+  left: 40%;
+  transform: translate(-50%, -50%);
+
+  font: 1em tahoma;
+  font-weight: bold;
+
+  padding: 5px;
+
+  color: white;
+  background: linear-gradient(180deg, #30d95f 0%, #0b8a5e 80%);
+}
+.btn-under-head:hover {
+  color: orangered;
+}
+.box-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.card {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+
+  width: 100%;
+  height: 40vh;
+
+  margin-top: 25px;
+  padding: 0 20px 20px;
+  border: 2px solid;
+
+  background-size: cover;
+  width: 100%;
+  height: auto;
+}
+.card h2 {
+  color: rgb(6, 6, 6);
+  font-size: 2rem;
+  font-weight: bolder;
+  -webkit-text-stroke: 1px rgb(252, 245, 243);
+}
+.btn-card {
+  font-weight: bold;
+  letter-spacing: 1px;
+  padding: 5px;
+  width: 40%;
+}
+.card-software {
+  background-image: url(img/pb1.png);
+}
+.card-software h2 {
+  text-align: start;
+}
+.card-software p {
+  margin-top: -10px;
+  margin-bottom: 50px;
+}
+.card-program {
+  background-image: url(img/pb2.png);
+  background-position: left;
+}
+.card-design {
+  z-index: 10;
+}
+.card-design::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 20%;
+  width: 100%;
+  height: 100%;
+
+  background-image: url(img/pb33.png);
+
+  background-size: cover;
+  background-position: top;
+  background-repeat: no-repeat;
+
+  transform: scaleX(-1);
+
+  z-index: -1;
+}
+/*Sm-Mobile*/
+@media (min-width: 576px) {
+  .under-head {
+    display: flex;
+    position: relative;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 10%;
+  }
+  .under-head-p {
+    text-align: justify;
+    width: 200px;
+  }
+  .btn-under-head {
+    left: 30%;
+  }
+  .box-card {
+    display: grid;
+    gap: 5px;
+    grid-template-columns: repeat(3, 185px);
+
+    margin: 20px 5px;
+  }
+  .card {
+    max-height: 50vh;
+    width: 100%;
+    height: 50vh;
+  }
+  .card-software {
+    width: 100%;
+    height: 50vh;
+  }
+  .card-software h2 {
+    text-align: start;
+  }
+  .card-software p {
+    margin: 0;
+    margin-bottom: 50px;
+  }
+  .card-software button {
+    width: 80%;
+  }
+  .card-design::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  background-image: url(img/pb33.png);
+
+  background-size: cover;
+  background-position: right;
+  background-repeat: no-repeat;
+
+  transform: scaleX(-1);
+
+  z-index: -1;
+}
+  .btn-card {
+    width: 100%;
+  }
+}
+
+/*Md-Tablet*/
+@media (min-width: 768px) {
+  .cube {
+    background-color: red;
+  }
+}
+/*Lg-Desktop*/
+@media (min-width: 992px) {
+  .cube {
+    background-color: pink;
+  }
+}
+/*Xl-Desktop*/
+@media (min-width: 1200px) {
+  .cube {
+    background-color: green;
+  }
+}
+/*Xxl-Desktop*/
+@media (min-width: 1400px) {
+  .cube {
+    background-color: orange;
+    width: 300px;
+  }
+}
